@@ -1,0 +1,2082 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>РќР°С‚СЏР¶РЅС– СЃС‚РµР»С– РџРѕР»С‚Р°РІР° В· РџРѕС‚РѕР»РєРёВ·РџРѕР»С‚Р°РІР° В· РІС–Рґ 180 в‚ґ/РјВІ</title>
+<meta name="description" content="РќР°С‚СЏР¶РЅС– СЃС‚РµР»С– РІ РџРѕР»С‚Р°РІС– С‚Р° РѕР±Р»Р°СЃС‚С–. РњРѕРЅС‚Р°Р¶ Р·Р° 1 РґРµРЅСЊ, РіР°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ, Р±РµР·РєРѕС€С‚РѕРІРЅРёР№ Р·Р°РјС–СЂ. Р“Р»СЏРЅС†РµРІС–, РјР°С‚РѕРІС–, Р· РїС–РґСЃРІС–С‚РєРѕСЋ, С‚СЂРµРєРѕРј, СЂРѕРјР±РѕРј. +380 096 176 32 11">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:        #0a0b0d;
+  --bg-2:      #111316;
+  --panel:     #181b1f;
+  --line:      #232730;
+  --line-2:    #2f343e;
+  --text:      #f0f2f5;
+  --text-dim:  #8a909a;
+  --accent:    #e8eaef;
+  --accent-2:  #c9ccd2;
+  --accent-d:  #8a8e96;
+  --gold:      #d4af6f;
+  --red:       #e63946;
+  --green:     #2ecc71;
+  --font-d:    'Archivo Black', sans-serif;
+  --font-b:    'Manrope', sans-serif;
+  --font-m:    'JetBrains Mono', monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-b);
+  font-weight:400;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity:.05;mix-blend-mode:overlay;
+}
+
+/* ============== TOP BAR ============== */
+.top-bar{
+  background:var(--accent);
+  color:#0a0b0d;
+  padding:9px 0;
+  font-family:var(--font-m);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  overflow:hidden;
+  position:relative;
+  z-index:50;
+}
+.top-bar-track{
+  display:flex;gap:48px;
+  animation:slide 30s linear infinite;
+  white-space:nowrap;width:max-content;
+}
+.top-bar-track span::before{content:"в¬ў ";color:var(--gold)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============== NAV ============== */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(10,11,13,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1400px;margin:0 auto;padding:0 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:74px;gap:32px;
+}
+.logo{
+  display:flex;align-items:center;gap:14px;
+  font-family:var(--font-d);
+  font-size:20px;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.logo-mark{
+  width:42px;height:42px;
+  background:var(--accent);
+  color:#0a0b0d;
+  display:grid;place-items:center;
+  position:relative;
+  border-radius:6px;
+  transform:rotate(-4deg);
+  box-shadow:0 8px 24px -6px rgba(232,234,239,.25);
+}
+.logo-mark svg{width:24px;height:24px;position:relative;z-index:2}
+.logo b{color:var(--gold)}
+
+.nav-links{
+  display:flex;gap:32px;list-style:none;
+  font-size:13px;font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.nav-links a{
+  color:var(--text-dim);
+  position:relative;padding:6px 0;
+  transition:color .2s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;
+  height:1px;width:0;background:var(--accent);
+  transition:width .3s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+
+.nav-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 22px;
+  background:var(--accent);
+  color:#0a0b0d;
+  font-weight:700;font-size:13px;
+  letter-spacing:.04em;text-transform:uppercase;
+  border-radius:6px;
+  transition:transform .2s, box-shadow .2s;
+  box-shadow:0 8px 24px -8px rgba(232,234,239,.4);
+}
+.nav-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px -8px rgba(232,234,239,.6);
+}
+.nav-cta svg{width:16px;height:16px}
+
+@media(max-width:960px){.nav-links{display:none}}
+@media(max-width:600px){
+  .nav-inner{padding:0 16px;gap:14px}
+  .nav-cta span{display:none}
+  .nav-cta{padding:12px}
+}
+
+/* ============== HERO ============== */
+.hero{
+  position:relative;
+  padding:80px 32px 100px;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at center, black 30%, transparent 80%);
+  opacity:.5;
+}
+.hero-glow{
+  position:absolute;
+  top:-200px;right:-200px;
+  width:700px;height:700px;
+  background:radial-gradient(circle, rgba(232,234,239,.08), transparent 60%);
+  pointer-events:none;z-index:0;
+}
+.hero-glow-2{
+  position:absolute;
+  bottom:-200px;left:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(circle, rgba(212,175,111,.05), transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.hero-inner{
+  max-width:1400px;margin:0 auto;
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-badges{
+  display:flex;gap:10px;flex-wrap:wrap;
+  margin-bottom:28px;
+  font-family:var(--font-m);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 13px;
+  border:1px solid var(--line-2);
+  font-size:11px;
+  color:var(--text-dim);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border-radius:4px;
+}
+.hero-badge.on{
+  color:var(--green);border-color:var(--green);
+}
+.hero-badge-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--green);
+  animation:blink 1.6s infinite;
+}
+@keyframes blink{
+  0%,100%{opacity:1;box-shadow:0 0 8px var(--green)}
+  50%{opacity:.3;box-shadow:0 0 0 var(--green)}
+}
+
+.hero h1{
+  font-family:var(--font-d);
+  font-size:clamp(46px, 7vw, 108px);
+  line-height:.88;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .stroke{
+  -webkit-text-stroke:2px var(--text);
+  color:transparent;
+}
+.hero h1 .underline{position:relative;display:inline-block}
+.hero h1 .underline::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:8px;
+  height:14px;
+  background:var(--gold);
+  opacity:.35;
+  z-index:-1;
+  transform:skew(-8deg);
+}
+
+.hero-lead{
+  font-size:18px;
+  color:var(--text-dim);
+  max-width:540px;
+  margin-bottom:36px;
+  line-height:1.55;
+}
+
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px}
+.btn-accent{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 28px;
+  background:var(--accent);
+  color:#0a0b0d;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:.02em;
+  transition:all .2s;
+  position:relative;
+  border-radius:6px;
+}
+.btn-accent::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:var(--gold);
+  z-index:-1;
+  transform:translate(6px,6px);
+  transition:transform .2s;
+  border-radius:6px;
+}
+.btn-accent:hover{transform:translate(-3px,-3px)}
+.btn-accent:hover::after{transform:translate(9px,9px)}
+.btn-accent svg{width:18px;height:18px}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 28px;
+  border:1px solid var(--line-2);
+  background:var(--panel);
+  color:var(--text);
+  font-weight:500;
+  font-size:15px;
+  letter-spacing:.02em;
+  transition:all .2s;
+  border-radius:6px;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost svg{width:18px;height:18px}
+
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+  max-width:560px;
+}
+.hero-stat-num{
+  font-family:var(--font-d);
+  font-size:clamp(30px,4vw,44px);
+  line-height:1;margin-bottom:6px;
+  color:var(--accent);
+}
+.hero-stat-label{
+  font-family:var(--font-m);
+  font-size:11px;
+  color:var(--text-dim);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* HERO VISUAL вЂ” main photo with corners + small gallery */
+.hero-visual{
+  position:relative;
+}
+.hero-photo{
+  position:relative;
+  border:1px solid var(--line-2);
+  padding:12px;
+  background:var(--panel);
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.7);
+}
+.hero-photo::before{
+  content:"";position:absolute;
+  top:-1px;left:-1px;width:42px;height:42px;
+  border-top:2px solid var(--accent);
+  border-left:2px solid var(--accent);
+}
+.hero-photo::after{
+  content:"";position:absolute;
+  bottom:-1px;right:-1px;width:42px;height:42px;
+  border-bottom:2px solid var(--accent);
+  border-right:2px solid var(--accent);
+}
+.hero-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  display:block;
+  filter:contrast(1.05);
+}
+.hero-photo-label{
+  position:absolute;
+  top:32px;left:32px;
+  background:rgba(10,11,13,.85);
+  backdrop-filter:blur(10px);
+  padding:8px 14px;
+  font-family:var(--font-m);
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--accent);
+  border-left:2px solid var(--accent);
+  text-transform:uppercase;
+  z-index:3;
+}
+
+.hero-badge-corner{
+  position:absolute;
+  top:32px;right:-12px;
+  background:var(--gold);
+  color:#0a0b0d;
+  padding:10px 18px;
+  font-family:var(--font-d);
+  font-size:13px;
+  letter-spacing:.06em;
+  transform:rotate(4deg);
+  box-shadow:0 14px 30px -8px rgba(212,175,111,.5);
+  z-index:6;
+  text-transform:uppercase;
+}
+.hero-spec{
+  position:absolute;
+  bottom:-20px;left:-20px;
+  background:var(--panel);
+  border:1px solid var(--line-2);
+  padding:16px 20px;
+  display:flex;align-items:center;gap:14px;
+  box-shadow:0 18px 40px -12px rgba(0,0,0,.7);
+  z-index:6;
+  border-radius:6px;
+}
+.hero-spec-icon{
+  width:42px;height:42px;
+  background:var(--accent);
+  color:#0a0b0d;
+  display:grid;place-items:center;
+  border-radius:6px;
+  flex-shrink:0;
+}
+.hero-spec-icon svg{width:22px;height:22px}
+.hero-spec-val{
+  font-family:var(--font-d);
+  font-size:18px;line-height:1;
+  letter-spacing:.02em;
+}
+.hero-spec-label{
+  font-size:11px;color:var(--text-dim);
+  letter-spacing:.08em;text-transform:uppercase;
+  margin-top:4px;font-family:var(--font-m);
+}
+
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-visual{max-width:520px;margin:0 auto}
+}
+@media(max-width:600px){
+  .hero{padding:50px 16px 60px}
+  .hero-stats{gap:14px}
+  .hero-stat-num{font-size:24px}
+  .hero-stat-label{font-size:9px}
+  .hero-spec{padding:12px 14px;left:-10px;bottom:-15px}
+  .hero-spec-icon{width:36px;height:36px}
+  .hero-spec-icon svg{width:18px;height:18px}
+  .hero-spec-val{font-size:14px}
+}
+
+/* ============== MARQUEE ============== */
+.marquee{
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+  overflow:hidden;
+}
+.marquee-track{
+  display:flex;gap:56px;
+  animation:slide 32s linear infinite;
+  white-space:nowrap;width:max-content;
+}
+.marquee-item{
+  font-family:var(--font-d);
+  font-size:24px;
+  color:var(--text-dim);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:56px;
+}
+.marquee-item::after{content:"в—Џ";color:var(--gold);font-size:14px}
+
+/* ============== SECTIONS ============== */
+section{position:relative;z-index:2}
+.section{
+  padding:100px 32px;
+  max-width:1400px;
+  margin:0 auto;
+}
+@media(max-width:600px){.section{padding:60px 16px}}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:32px;
+  margin-bottom:60px;
+  flex-wrap:wrap;
+}
+.section-num{
+  font-family:var(--font-m);
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:.14em;
+  margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-num::before{
+  content:"";width:28px;height:1px;background:var(--gold);
+}
+.section-title{
+  font-family:var(--font-d);
+  font-size:clamp(36px,4.5vw,60px);
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  max-width:780px;
+}
+.section-title .accent{color:var(--accent)}
+.section-title .gold{color:var(--gold)}
+.section-title .stroke{
+  -webkit-text-stroke:1.5px var(--text);
+  color:transparent;
+}
+.section-desc{
+  color:var(--text-dim);
+  font-size:15px;
+  max-width:380px;
+}
+
+/* ============== GALLERY (BIG SHOWCASE) ============== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:16px;
+  height:760px;
+}
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--panel);
+  cursor:pointer;
+  border-radius:8px;
+}
+.gallery-item img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .4s;
+  filter:contrast(1.05);
+}
+.gallery-item:hover img{
+  transform:scale(1.05);
+  filter:contrast(1.1) brightness(1.05);
+}
+.gallery-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:2;
+}
+.gallery-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:32px;
+  z-index:3;
+  color:#fff;
+}
+.gallery-tag{
+  display:inline-block;
+  font-family:var(--font-m);
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:8px;
+}
+.gallery-title{
+  font-family:var(--font-d);
+  font-size:22px;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  line-height:1.05;
+  margin-bottom:6px;
+}
+.gallery-desc{
+  font-size:13px;
+  color:rgba(255,255,255,.75);
+  font-family:var(--font-m);
+}
+.gallery-item-1{grid-row:span 2;grid-column:1}
+.gallery-item-2{grid-column:2}
+.gallery-item-3{grid-column:3}
+.gallery-item-4{grid-column:2}
+.gallery-item-5{grid-column:3}
+
+@media(max-width:960px){
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:repeat(3,260px);
+    height:auto;
+  }
+  .gallery-item-1{grid-row:span 1;grid-column:span 2}
+  .gallery-item-2,.gallery-item-3,.gallery-item-4,.gallery-item-5{
+    grid-column:span 1;
+  }
+  .gallery-title{font-size:18px}
+}
+@media(max-width:540px){
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(5,240px);
+  }
+  .gallery-item-1,.gallery-item-2,.gallery-item-3,.gallery-item-4,.gallery-item-5{
+    grid-column:span 1;
+  }
+}
+
+/* ============== FORMATS / SERVICES ============== */
+.formats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media(max-width:960px){.formats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.formats{grid-template-columns:1fr}}
+
+.format{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+  transition:border-color .3s, transform .3s;
+  border-radius:10px;
+  display:flex;flex-direction:column;
+}
+.format:hover{
+  border-color:var(--accent);
+  transform:translateY(-4px);
+}
+.format-img{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.format-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s;
+  filter:contrast(1.05);
+}
+.format:hover .format-img img{transform:scale(1.05)}
+.format-img-tag{
+  position:absolute;
+  top:14px;left:14px;
+  background:rgba(10,11,13,.85);
+  backdrop-filter:blur(8px);
+  padding:6px 12px;
+  font-family:var(--font-m);
+  font-size:10px;
+  letter-spacing:.12em;
+  color:var(--gold);
+  text-transform:uppercase;
+  border-left:2px solid var(--gold);
+  z-index:3;
+}
+.format-body{
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.format h3{
+  font-family:var(--font-d);
+  font-size:22px;
+  line-height:1.05;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  margin-bottom:12px;
+}
+.format-text{
+  color:var(--text-dim);
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:24px;
+  flex:1;
+}
+.format-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:20px;
+  border-top:1px dashed var(--line-2);
+}
+.format-price{
+  font-family:var(--font-d);
+  font-size:20px;
+}
+.format-price small{
+  font-size:11px;
+  font-family:var(--font-m);
+  color:var(--text-dim);
+  font-weight:400;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:2px;
+}
+.format-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#0a0b0d;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  border-radius:5px;
+  transition:all .2s;
+}
+.format-cta:hover{
+  background:var(--gold);
+  transform:translateX(2px);
+}
+.format-cta svg{width:13px;height:13px}
+
+/* ============== PRICES TABLE ============== */
+.price-bg{
+  background:var(--bg-2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.price-list{
+  display:flex;flex-direction:column;
+  gap:8px;
+}
+.price-row{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:24px;
+  align-items:center;
+  padding:24px 28px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:8px;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+.price-row::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;width:3px;
+  background:var(--accent);
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .35s;
+}
+.price-row:hover{
+  border-color:var(--accent);
+  transform:translateX(4px);
+}
+.price-row:hover::before{transform:scaleY(1)}
+.price-icon{
+  width:48px;height:48px;
+  background:var(--bg-2);
+  border:1px solid var(--line-2);
+  display:grid;place-items:center;
+  color:var(--accent);
+  flex-shrink:0;
+  border-radius:6px;
+  transition:all .25s;
+}
+.price-row:hover .price-icon{
+  background:var(--accent);
+  color:#0a0b0d;
+  border-color:var(--accent);
+}
+.price-icon svg{width:24px;height:24px}
+.price-info h3{
+  font-family:var(--font-d);
+  font-size:17px;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  margin-bottom:4px;
+}
+.price-info p{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.5;
+}
+.price-value{
+  font-family:var(--font-d);
+  font-size:22px;
+  white-space:nowrap;
+  text-align:right;
+  letter-spacing:-.01em;
+}
+.price-value small{
+  font-size:11px;
+  font-weight:400;
+  font-family:var(--font-m);
+  color:var(--text-dim);
+  display:block;
+  margin-bottom:2px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.price-value .gold{color:var(--gold)}
+@media(max-width:600px){
+  .price-row{grid-template-columns:auto 1fr;padding:20px 18px;gap:14px}
+  .price-value{
+    grid-column:span 2;
+    text-align:left;
+    padding-top:12px;
+    border-top:1px dashed var(--line-2);
+    display:flex;align-items:baseline;gap:10px;
+  }
+  .price-value small{margin-bottom:0}
+  .price-icon{width:40px;height:40px}
+  .price-icon svg{width:20px;height:20px}
+  .price-info h3{font-size:15px}
+}
+
+/* ============== PROCESS ============== */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--line);
+  background:var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+@media(max-width:860px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.process-grid{grid-template-columns:1fr}}
+
+.process-step{
+  background:var(--bg-2);
+  padding:36px 28px;
+  position:relative;
+  transition:background .3s;
+}
+.process-step:hover{background:var(--panel)}
+.process-num{
+  font-family:var(--font-d);
+  font-size:14px;
+  color:var(--gold);
+  margin-bottom:24px;
+  display:flex;align-items:center;gap:10px;
+}
+.process-num::after{
+  content:"";flex:1;height:1px;background:var(--line);
+}
+.process-icon{
+  width:50px;height:50px;
+  display:grid;place-items:center;
+  margin-bottom:20px;
+  color:var(--text);
+  transition:transform .4s, color .3s;
+}
+.process-step:hover .process-icon{
+  transform:rotate(-8deg) scale(1.1);
+  color:var(--accent);
+}
+.process-icon svg{width:32px;height:32px}
+.process-step h3{
+  font-family:var(--font-d);
+  font-size:16px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.process-step p{
+  color:var(--text-dim);
+  font-size:13px;
+  line-height:1.55;
+}
+
+/* ============== ADVANTAGES ============== */
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+@media(max-width:860px){.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.features{grid-template-columns:1fr}}
+
+.feature{
+  background:var(--bg);
+  padding:32px 28px;
+  transition:background .3s;
+}
+.feature:hover{background:var(--bg-2)}
+.feature-icon{
+  width:48px;height:48px;
+  background:transparent;
+  border:1px solid var(--line-2);
+  display:grid;place-items:center;
+  margin-bottom:18px;
+  color:var(--accent);
+  transition:all .3s;
+  border-radius:6px;
+}
+.feature:hover .feature-icon{
+  background:var(--accent);
+  color:#0a0b0d;
+  border-color:var(--accent);
+}
+.feature-icon svg{width:22px;height:22px}
+.feature h3{
+  font-family:var(--font-d);
+  font-size:15px;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  margin-bottom:8px;
+}
+.feature p{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.55;
+}
+
+/* ============== CTA BAND ============== */
+.cta-band{
+  position:relative;
+  padding:100px 32px;
+  background:var(--accent);
+  overflow:hidden;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.cta-band::before{
+  content:"12СЂ.";
+  position:absolute;
+  right:-40px;bottom:-100px;
+  font-family:var(--font-d);
+  font-size:340px;
+  color:rgba(212,175,111,.18);
+  letter-spacing:-.04em;
+  line-height:1;
+  pointer-events:none;
+}
+.cta-band-inner{
+  max-width:900px;margin:0 auto;
+  text-align:center;
+  position:relative;z-index:2;
+  color:#0a0b0d;
+}
+.cta-band h2{
+  font-family:var(--font-d);
+  font-size:clamp(36px,5vw,72px);
+  line-height:.92;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  margin-bottom:24px;
+}
+.cta-band p{
+  color:rgba(10,11,13,.7);
+  font-size:18px;
+  margin-bottom:40px;
+  max-width:560px;
+  margin-left:auto;margin-right:auto;
+  font-weight:500;
+}
+.cta-phone{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  padding:24px 40px;
+  background:#0a0b0d;
+  color:var(--accent);
+  font-family:var(--font-d);
+  font-size:clamp(24px,3.5vw,38px);
+  letter-spacing:.02em;
+  border-radius:8px;
+  transition:transform .25s, box-shadow .25s;
+  box-shadow:0 16px 40px -12px rgba(0,0,0,.3);
+}
+.cta-phone:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 24px 50px -12px rgba(0,0,0,.5);
+}
+.cta-phone svg{
+  width:32px;height:32px;
+  animation:wiggle 2s infinite;
+}
+@keyframes wiggle{
+  0%,100%{transform:rotate(0)}
+  25%{transform:rotate(-12deg)}
+  75%{transform:rotate(12deg)}
+}
+
+/* ============== CONTACT ============== */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+@media(max-width:960px){.contact-wrap{grid-template-columns:1fr}}
+
+.contact-info-item{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.contact-info-item:last-child{border-bottom:none}
+.contact-info-icon{
+  width:48px;height:48px;
+  background:transparent;
+  border:1px solid var(--line-2);
+  display:grid;place-items:center;
+  flex-shrink:0;
+  border-radius:6px;
+}
+.contact-info-icon svg{width:22px;height:22px;color:var(--accent)}
+.contact-info-label{
+  font-family:var(--font-m);
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.contact-info-val{
+  font-family:var(--font-d);
+  font-size:20px;
+  color:var(--text);
+  transition:color .2s;
+}
+a.contact-info-val:hover{color:var(--accent)}
+
+.messenger-buttons{
+  display:flex;gap:8px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.msg-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 14px;
+  border-radius:6px;
+  color:#fff;
+  font-weight:600;
+  font-size:13px;
+  transition:transform .2s, box-shadow .2s;
+}
+.msg-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px -6px rgba(0,0,0,.4);
+}
+.msg-btn svg{width:18px;height:18px;flex-shrink:0}
+.msg-btn-viber{background:#7360f2}
+.msg-btn-whatsapp{background:#25d366}
+.msg-btn-telegram{background:#229ed9}
+@media(max-width:480px){
+  .msg-btn span{display:none}
+}
+
+.form-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  padding:40px;
+  border-radius:12px;
+}
+.form-card h3{
+  font-family:var(--font-d);
+  font-size:24px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.form-card > p{
+  color:var(--text-dim);
+  font-size:14px;
+  margin-bottom:28px;
+}
+.form-field{margin-bottom:18px}
+.form-field label{
+  display:block;
+  font-family:var(--font-m);
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;
+  padding:14px 16px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  color:var(--text);
+  font-family:var(--font-b);
+  font-size:15px;
+  border-radius:6px;
+  transition:border-color .2s;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+.form-field textarea{resize:vertical;min-height:90px}
+.form-card button{
+  width:100%;
+  padding:18px;
+  background:var(--accent);
+  color:#0a0b0d;
+  font-family:var(--font-b);
+  font-weight:700;
+  font-size:15px;
+  border:none;border-radius:6px;
+  cursor:pointer;
+  transition:transform .2s, box-shadow .2s;
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.form-card button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px -8px rgba(232,234,239,.4);
+}
+.form-card button svg{width:18px;height:18px}
+
+/* ============== FOOTER ============== */
+footer{
+  background:var(--bg-2);
+  border-top:1px solid var(--line);
+  padding:60px 32px 24px;
+}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:48px;
+  margin-bottom:48px;
+  padding-bottom:40px;
+  border-bottom:1px solid var(--line);
+}
+@media(max-width:860px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-about{grid-column:span 2}
+}
+@media(max-width:540px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-about{grid-column:span 1}
+}
+.footer-about p{
+  color:var(--text-dim);
+  font-size:14px;
+  line-height:1.6;
+  margin:20px 0 0;
+  max-width:340px;
+}
+.footer-col h4{
+  font-family:var(--font-d);
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+  color:var(--accent);
+}
+.footer-col a, .footer-col p{
+  display:block;
+  color:var(--text-dim);
+  font-size:14px;
+  padding:5px 0;
+  transition:color .2s;
+}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  font-family:var(--font-m);
+  font-size:11px;
+  color:var(--text-dim);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* ============== FLOATING ============== */
+.float-contacts{
+  position:fixed;
+  bottom:24px;right:20px;
+  z-index:99;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-end;
+}
+.float-btn{
+  width:58px;height:58px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 10px 28px -6px rgba(0,0,0,.5);
+  transition:transform .2s, box-shadow .2s;
+  position:relative;
+}
+.float-btn:hover{transform:translateY(-3px) scale(1.05)}
+.float-btn svg{width:26px;height:26px}
+.float-btn-call{
+  background:var(--accent);
+  color:#0a0b0d;
+  animation:pulseCall 2.5s infinite;
+}
+.float-btn-viber{background:#7360f2}
+.float-btn-whatsapp{background:#25d366}
+.float-btn-telegram{background:#229ed9}
+.float-btn-tooltip{
+  position:absolute;
+  right:calc(100% + 12px);
+  top:50%;
+  transform:translateY(-50%);
+  background:#000;
+  color:#fff;
+  padding:8px 14px;
+  font-size:12px;
+  font-weight:500;
+  white-space:nowrap;
+  border:1px solid var(--line);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s, right .2s;
+  border-radius:4px;
+}
+.float-btn:hover .float-btn-tooltip{
+  opacity:1;
+  right:calc(100% + 16px);
+}
+@keyframes pulseCall{
+  0%{box-shadow:0 10px 28px -6px rgba(0,0,0,.5), 0 0 0 0 rgba(232,234,239,.6)}
+  70%{box-shadow:0 10px 28px -6px rgba(0,0,0,.5), 0 0 0 18px rgba(232,234,239,0)}
+  100%{box-shadow:0 10px 28px -6px rgba(0,0,0,.5), 0 0 0 0 rgba(232,234,239,0)}
+}
+@media(max-width:600px){
+  .float-contacts{bottom:16px;right:14px;gap:10px}
+  .float-btn{width:52px;height:52px}
+  .float-btn svg{width:24px;height:24px}
+  .float-btn-tooltip{display:none}
+}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease, transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<div class="top-bar">
+  <div class="top-bar-track">
+    <span>Р’РёС—Р·Рґ Р·Р° 1 РґРµРЅСЊ</span>
+    <span>Р“Р°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ</span>
+    <span>Р‘РµР· РїРµСЂРµРґРѕРїР»Р°С‚</span>
+    <span>РџРѕР»С‚Р°РІР° С‚Р° РѕР±Р»Р°СЃС‚СЊ</span>
+    <span>500+ СЂРµР°Р»С–Р·РѕРІР°РЅРёС… РїСЂРѕРµРєС‚С–РІ</span>
+    <span>Р’РёС—Р·Рґ Р·Р° 1 РґРµРЅСЊ</span>
+    <span>Р“Р°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ</span>
+    <span>Р‘РµР· РїРµСЂРµРґРѕРїР»Р°С‚</span>
+    <span>РџРѕР»С‚Р°РІР° С‚Р° РѕР±Р»Р°СЃС‚СЊ</span>
+    <span>500+ СЂРµР°Р»С–Р·РѕРІР°РЅРёС… РїСЂРѕРµРєС‚С–РІ</span>
+  </div>
+</div>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="6" width="18" height="12" rx="1"/>
+          <path d="M3 10h18M3 14h18"/>
+        </svg>
+      </div>
+      <span>РџРћРўРћР›РљР<b>В·</b>РџРћР›РўРђР’Рђ</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Р РѕР±РѕС‚Рё</a></li>
+      <li><a href="#services">РџРѕСЃР»СѓРіРё</a></li>
+      <li><a href="#prices">Р¦С–РЅРё</a></li>
+      <li><a href="#process">РџСЂРѕС†РµСЃ</a></li>
+      <li><a href="#contact">РљРѕРЅС‚Р°РєС‚Рё</a></li>
+    </ul>
+    <a href="tel:+380961763211" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+      </svg>
+      <span>Р’РёРєР»РёРє</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badges">
+        <span class="hero-badge on"><span class="hero-badge-dot"></span>ONLINE 24/7</span>
+        <span class="hero-badge">РџРћР›РўРђР’Рђ РўРђ РћР‘Р›РђРЎРўР¬</span>
+        <span class="hero-badge">Р“РђР РђРќРўР†РЇ 12 Р РћРљР†Р’</span>
+      </div>
+      <h1>
+        <span class="stroke">РќРђРўРЇР–РќР†</span><br>
+        <span class="underline accent">РЎРўР•Р›Р†</span><br>
+        Р”Р›РЇ Р”РћРњРЈ
+      </h1>
+      <p class="hero-lead">РџСЂРµРјС–Р°Р»СЊРЅС– РЅР°С‚СЏР¶РЅС– СЃС‚РµР»С– РІ РџРѕР»С‚Р°РІС– вЂ” РіР»СЏРЅС†РµРІС–, РјР°С‚РѕРІС–, Р· С‚СЂРµРєРѕРІРѕСЋ СЃРёСЃС‚РµРјРѕСЋ, СЃРІС–С‚Р»РѕРІРёРјРё Р»С–РЅС–СЏРјРё С‚Р° СЂРѕРјР±-РїС–РґСЃРІС–С‚РєРѕСЋ. Р’РёС—Р·Рґ РЅР° Р·Р°РјС–СЂ Р±РµР·РєРѕС€С‚РѕРІРЅРѕ, РјРѕРЅС‚Р°Р¶ Р·Р° 1 РґРµРЅСЊ, РіР°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ. Р’С–Рґ 180 в‚ґ/РјВІ.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-accent">
+          Р—Р°РјРѕРІРёС‚Рё Р·Р°РјС–СЂ
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#prices" class="btn-ghost">
+          РџРµСЂРµРіР»СЏРЅСѓС‚Рё С†С–РЅРё
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" data-n="10">10+</div>
+          <div class="hero-stat-label">Р РѕРєС–РІ<br>РґРѕСЃРІС–РґСѓ</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-n="500">500+</div>
+          <div class="hero-stat-label">РџСЂРѕРµРєС‚С–РІ<br>РІРёРєРѕРЅР°РЅРѕ</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-n="12">12 СЂ.</div>
+          <div class="hero-stat-label">Р“Р°СЂР°РЅС‚С–СЏ<br>РїРёСЃСЊРјРѕРІР°</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <div class="hero-photo-label">// РќРђРЁРђ Р РћР‘РћРўРђ</div>
+        <img src="images/03-romb-pidsvitka.jpg" alt="РќР°С‚СЏР¶РЅР° СЃС‚РµР»СЏ Р· СЂРѕРјР±-РїС–РґСЃРІС–С‚РєРѕСЋ Сѓ РІР°РЅРЅС–Р№ вЂ” РїСЂРёРєР»Р°Рґ СЂРѕР±РѕС‚Рё">
+        <div class="hero-badge-corner">РІС–Рґ 180 в‚ґ/РјВІ</div>
+        <div class="hero-spec">
+          <div class="hero-spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="hero-spec-val">12 Р РћРљР†Р’</div>
+            <div class="hero-spec-label">РџРёСЃСЊРјРѕРІР° РіР°СЂР°РЅС‚С–СЏ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE ============== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Р“Р»СЏРЅС†РµРІС– СЃС‚РµР»С–</span>
+    <span class="marquee-item">РњР°С‚РѕРІС– СЃС‚РµР»С–</span>
+    <span class="marquee-item">РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—</span>
+    <span class="marquee-item">РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР°</span>
+    <span class="marquee-item">Р РѕРјР±-РїС–РґСЃРІС–С‚РєР°</span>
+    <span class="marquee-item">РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё</span>
+    <span class="marquee-item">РўРєР°РЅРёРЅРЅС– СЃС‚РµР»С–</span>
+    <span class="marquee-item">Р“Р»СЏРЅС†РµРІС– СЃС‚РµР»С–</span>
+    <span class="marquee-item">РњР°С‚РѕРІС– СЃС‚РµР»С–</span>
+    <span class="marquee-item">РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—</span>
+    <span class="marquee-item">РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР°</span>
+    <span class="marquee-item">Р РѕРјР±-РїС–РґСЃРІС–С‚РєР°</span>
+    <span class="marquee-item">РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё</span>
+    <span class="marquee-item">РўРєР°РЅРёРЅРЅС– СЃС‚РµР»С–</span>
+  </div>
+</div>
+
+<!-- ============== GALLERY ============== -->
+<section class="section" id="gallery">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-num">01 / РќРђРЁР† Р РћР‘РћРўР</div>
+      <h2 class="section-title">Р РµР°Р»СЊРЅС– <span class="accent">РїСЂРѕРµРєС‚Рё</span> Сѓ РџРѕР»С‚Р°РІС–</h2>
+    </div>
+    <p class="section-desc">РљРѕР¶РЅРµ С„РѕС‚Рѕ вЂ” РЅР°С€Р° СЂРѕР±РѕС‚Р°. Р–РѕРґРЅРёС… СЃС‚РѕРєРѕРІРёС… РєР°СЂС‚РёРЅРѕРє. Р’РёРєРѕРЅР°РЅРѕ РІ СЂРµР°Р»СЊРЅРёС… РєРІР°СЂС‚РёСЂР°С… С‚Р° Р±СѓРґРёРЅРєР°С… РџРѕР»С‚Р°РІС‰РёРЅРё.</p>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div class="gallery-item gallery-item-1">
+      <img src="images/03-romb-pidsvitka.jpg" alt="РќР°С‚СЏР¶РЅР° СЃС‚РµР»СЏ Р· СЂРѕРјР±-РїС–РґСЃРІС–С‚РєРѕСЋ Сѓ РІР°РЅРЅС–Р№">
+      <div class="gallery-overlay">
+        <div class="gallery-tag">// Р РћРњР‘-РџР†Р”РЎР’Р†РўРљРђ</div>
+        <div class="gallery-title">РЎРІС–С‚Р»РѕРІР° СЂР°РјРєР°<br>Сѓ С„РѕСЂРјС– СЂРѕРјР±Р°</div>
+        <div class="gallery-desc">Р’Р°РЅРЅР° РєС–РјРЅР°С‚Р° В· РџРѕР»С‚Р°РІР°</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-2">
+      <img src="images/01-trekova.jpg" alt="РўСЂРµРєРѕРІР° СЃРёСЃС‚РµРјР° РѕСЃРІС–С‚Р»РµРЅРЅСЏ РІ РєРѕСЂРёРґРѕСЂС–">
+      <div class="gallery-overlay">
+        <div class="gallery-tag">// РўР Р•РљРћР’Рђ РЎРРЎРўР•РњРђ</div>
+        <div class="gallery-title">Р§РѕСЂРЅРёР№ С‚СЂРµРє<br>Р· РїРѕРІРѕСЂРѕС‚Р°РјРё</div>
+        <div class="gallery-desc">РљРѕСЂРёРґРѕСЂ В· РџРѕР»С‚Р°РІР°</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-3">
+      <img src="images/05-magnit-trek.jpg" alt="РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР° СЃРёСЃС‚РµРјР° Сѓ РІС–С‚Р°Р»СЊРЅС–">
+      <div class="gallery-overlay">
+        <div class="gallery-tag">// РњРђР“РќР†РўРќРђ РўР Р•РљРћР’Рђ</div>
+        <div class="gallery-title">Р›С–РЅС–Р№РЅС– СЃРІС–С‚РёР»СЊРЅРёРєРё</div>
+        <div class="gallery-desc">Р’С–С‚Р°Р»СЊРЅСЏ В· РџРѕР»С‚Р°РІР°</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-4">
+      <img src="images/02-svitlovi-linii.jpg" alt="РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С— РЅР° СЃС‚РµР»С– РІР°РЅРЅРѕС—">
+      <div class="gallery-overlay">
+        <div class="gallery-tag">// РЎР’Р†РўР›РћР’Р† Р›Р†РќР†Р‡</div>
+        <div class="gallery-title">Р“РµРѕРјРµС‚СЂРёС‡РЅС–<br>СЃРІС–С‚Р»РѕРІС– СЃРјСѓРіРё</div>
+        <div class="gallery-desc">Р’Р°РЅРЅР° В· РџРѕР»С‚Р°РІР°</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item-5">
+      <img src="images/04-tochkovi.jpg" alt="РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё РЅР° РјР°С‚РѕРІС–Р№ СЃС‚РµР»С–">
+      <div class="gallery-overlay">
+        <div class="gallery-tag">// РўРћР§РљРћР’Р† РЎР’Р†РўРР›Р¬РќРРљР</div>
+        <div class="gallery-title">РљР»Р°СЃРёС‡РЅР°<br>РјР°С‚РѕРІР° СЃС‚РµР»СЏ</div>
+        <div class="gallery-desc">РљСѓС…РЅСЏ-РІС–С‚Р°Р»СЊРЅСЏ В· РџРѕР»С‚Р°РІР°</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICES / FORMATS ============== -->
+<section class="section" id="services" style="padding-top:0">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-num">02 / РџРћРЎР›РЈР“Р</div>
+      <h2 class="section-title">Р©Рѕ РјРё <span class="accent">СЂРѕР±РёРјРѕ</span></h2>
+    </div>
+    <p class="section-desc">РџРѕРІРЅРёР№ СЃРїРµРєС‚СЂ РЅР°С‚СЏР¶РЅРёС… СЃС‚РµР»СЊ вЂ” РІС–Рґ РєР»Р°СЃРёС‡РЅРёС… РјР°С‚РѕРІРёС… РґРѕ СЃРєР»Р°РґРЅРёС… СЃРІС–С‚Р»РѕРІРёС… СЃРёСЃС‚РµРј.</p>
+  </div>
+
+  <div class="formats">
+
+    <div class="format reveal">
+      <div class="format-img">
+        <img src="images/03-romb-pidsvitka.jpg" alt="РЎС‚РµР»С– Р· РїС–РґСЃРІС–С‚РєРѕСЋ">
+        <div class="format-img-tag">в¬ў РџР Р•РњР†РЈРњ</div>
+      </div>
+      <div class="format-body">
+        <h3>РЎС‚РµР»СЏ<br>Р· РїС–РґСЃРІС–С‚РєРѕСЋ</h3>
+        <p class="format-text">РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С— С‚Р° РіРµРѕРјРµС‚СЂРёС‡РЅС– С„РѕСЂРјРё вЂ” СЂРѕРјР±, РїСЂСЏРјРѕРєСѓС‚РЅРёРє, РєРѕРЅС‚СѓСЂРё РєС–РјРЅР°С‚Рё. LED-СЃС‚СЂС–С‡РєРё РІ СЃС‚РµР»СЊРѕРІРѕРјСѓ РїРѕР»РѕС‚РЅС– СЃС‚РІРѕСЂСЋСЋС‚СЊ СѓРЅС–РєР°Р»СЊРЅРёР№ РґРёР·Р°Р№РЅ.</p>
+        <div class="format-bottom">
+          <div class="format-price">
+            <small>РІС–Рґ</small>
+            420 в‚ґ<small style="display:inline">/РјВІ</small>
+          </div>
+          <a href="#contact" class="format-cta">
+            Р—Р°РјРѕРІРёС‚Рё
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-img">
+        <img src="images/01-trekova.jpg" alt="РўСЂРµРєРѕРІР° СЃРёСЃС‚РµРјР°">
+        <div class="format-img-tag">в¬ў РЎРЈР§РђРЎРќРћ</div>
+      </div>
+      <div class="format-body">
+        <h3>РўСЂРµРєРѕРІР°<br>СЃРёСЃС‚РµРјР°</h3>
+        <p class="format-text">Р§РѕСЂРЅС– Р°Р±Рѕ Р±С–Р»С– РјР°РіРЅС–С‚РЅС– С‚СЂРµРєРё Р· СЂСѓС…РѕРјРёРјРё СЃРІС–С‚РёР»СЊРЅРёРєР°РјРё. РњРѕР¶Р»РёРІС–СЃС‚СЊ Р·РјС–РЅСЋРІР°С‚Рё РєСѓС‚ С– РєС–Р»СЊРєС–СЃС‚СЊ С‚РѕС‡РѕРє РѕСЃРІС–С‚Р»РµРЅРЅСЏ Р±РµР· РїРµСЂРµСЂРѕР±РєРё.</p>
+        <div class="format-bottom">
+          <div class="format-price">
+            <small>РІС–Рґ</small>
+            380 в‚ґ<small style="display:inline">/Рј</small>
+          </div>
+          <a href="#contact" class="format-cta">
+            Р—Р°РјРѕРІРёС‚Рё
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-img">
+        <img src="images/05-magnit-trek.jpg" alt="РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР° СЃРёСЃС‚РµРјР°">
+        <div class="format-img-tag">в¬ў Р”РР—РђР™Рќ</div>
+      </div>
+      <div class="format-body">
+        <h3>РњР°РіРЅС–С‚РЅР°<br>С‚СЂРµРєРѕРІР°</h3>
+        <p class="format-text">РўРѕРЅРєС– РјР°РіРЅС–С‚РЅС– С‚СЂРµРєРё Р· Р»С–РЅС–Р№РЅРёРјРё СЃРІС–С‚РёР»СЊРЅРёРєР°РјРё. РџС–РґС…РѕРґСЏС‚СЊ РґР»СЏ РјС–РЅС–РјР°Р»С–СЃС‚РёС‡РЅРёС… С–РЅС‚РµСЂ'С”СЂС–РІ вЂ” СЃС‚РІРѕСЂСЋСЋС‚СЊ С‡С–С‚РєС– РіРµРѕРјРµС‚СЂРёС‡РЅС– Р»С–РЅС–С—.</p>
+        <div class="format-bottom">
+          <div class="format-price">
+            <small>РІС–Рґ</small>
+            450 в‚ґ<small style="display:inline">/Рј</small>
+          </div>
+          <a href="#contact" class="format-cta">
+            Р—Р°РјРѕРІРёС‚Рё
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-img">
+        <img src="images/02-svitlovi-linii.jpg" alt="РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—">
+        <div class="format-img-tag">в¬ў РҐР†Рў РџР РћР”РђР–Р†Р’</div>
+      </div>
+      <div class="format-body">
+        <h3>РЎРІС–С‚Р»РѕРІС–<br>Р»С–РЅС–С—</h3>
+        <p class="format-text">Р‘РµР·С€РѕРІРЅС– СЃРІС–С‚Р»РѕРІС– СЃРјСѓРіРё РІ СЃС‚РµР»СЊРѕРІРѕРјСѓ РїРѕР»РѕС‚РЅС–. РњРѕР¶РЅР° СЂРѕР±РёС‚Рё РґРѕРІС–Р»СЊРЅС– С„РѕСЂРјРё: СЂР°РјРєРё, Р»Р°Р±С–СЂРёРЅС‚Рё, РїРµСЂРёРјРµС‚СЂРё. Р•С„РµРєС‚ В«СЃРІС–С‚Р»Р° Р· РЅС–С‡РѕРіРѕВ».</p>
+        <div class="format-bottom">
+          <div class="format-price">
+            <small>РІС–Рґ</small>
+            520 в‚ґ<small style="display:inline">/Рј</small>
+          </div>
+          <a href="#contact" class="format-cta">
+            Р—Р°РјРѕРІРёС‚Рё
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-img">
+        <img src="images/04-tochkovi.jpg" alt="РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё">
+        <div class="format-img-tag">в¬ў РљР›РђРЎРРљРђ</div>
+      </div>
+      <div class="format-body">
+        <h3>РўРѕС‡РєРѕРІС–<br>СЃРІС–С‚РёР»СЊРЅРёРєРё</h3>
+        <p class="format-text">РљР»Р°СЃРёС‡РЅРµ СЂС–С€РµРЅРЅСЏ вЂ” РјР°С‚РѕРІР° Р°Р±Рѕ РіР»СЏРЅС†РµРІР° СЃС‚РµР»СЏ Р· РІРјРѕРЅС‚РѕРІР°РЅРёРјРё С‚РѕС‡РєРѕРІРёРјРё СЃРІС–С‚РёР»СЊРЅРёРєР°РјРё. РЈРЅС–РІРµСЂСЃР°Р»СЊРЅРѕ РїС–РґС…РѕРґРёС‚СЊ РґР»СЏ Р±СѓРґСЊ-СЏРєРѕРіРѕ С–РЅС‚РµСЂ'С”СЂСѓ.</p>
+        <div class="format-bottom">
+          <div class="format-price">
+            <small>РІС–Рґ</small>
+            180 в‚ґ<small style="display:inline">/РјВІ</small>
+          </div>
+          <a href="#contact" class="format-cta">
+            Р—Р°РјРѕРІРёС‚Рё
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-img" style="background:linear-gradient(135deg, var(--panel) 0%, var(--bg-2) 100%);display:grid;place-items:center">
+        <svg viewBox="0 0 24 24" width="80" height="80" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.4">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <div class="format-img-tag">в¬ў Р†РќР”РР’Р†Р”РЈРђР›Р¬РќРћ</div>
+      </div>
+      <div class="format-body">
+        <h3>РўР° С–РЅС€Рµ</h3>
+        <p class="format-text">РќРµ Р·РЅР°Р№С€Р»Рё СЃРІРѕС” СЂС–С€РµРЅРЅСЏ? Р“Р»СЏРЅС†РµРІС– СЃС‚РµР»С–, С„РѕС‚РѕРґСЂСѓРє, С‚РєР°РЅРёРЅРЅС– Barrisol, РґР·РµСЂРєР°Р»СЊРЅС–, Р±Р°РіР°С‚РѕСЂС–РІРЅРµРІС–. РџРѕРґР·РІРѕРЅС–С‚СЊ вЂ” РїС–РґР±РµСЂРµРјРѕ.</p>
+        <div class="format-bottom">
+          <div class="format-price" style="font-size:14px">
+            <small>СЂРѕР·СЂР°С…СѓРЅРѕРє</small>
+            РћР‘Р“РћР’РћР РРњРћ
+          </div>
+          <a href="tel:+380961763211" class="format-cta">
+            Р”Р·РІС–РЅРѕРє
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== PRICES ============== -->
+<section class="price-bg" id="prices">
+  <div class="section">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-num">03 / РџР РђР™РЎ</div>
+        <h2 class="section-title">РџСЂРѕР·РѕСЂС– <span class="gold">С‚Р°СЂРёС„Рё</span></h2>
+      </div>
+      <p class="section-desc">Р‘РµР· РїСЂРёС…РѕРІР°РЅРёС… РґРѕРїР»Р°С‚. Р—Р°РјС–СЂ С– РєРѕРЅСЃСѓР»СЊС‚Р°С†С–СЏ вЂ” Р±РµР·РєРѕС€С‚РѕРІРЅРѕ. РўРѕС‡РЅСѓ СЃСѓРјСѓ СЃРєР°Р¶РµРјРѕ РїС–СЃР»СЏ РІРёС—Р·РґСѓ.</p>
+    </div>
+
+    <div class="price-list">
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="12" rx="1"/>
+            <path d="M3 10h18"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РњР°С‚РѕРІР° СЃС‚РµР»СЏ</h3>
+          <p>Lackfolie РјР°С‚, Р±РµР· РІС–РґР±Р»РёСЃРєС–РІ, СЂС–РІРЅР° С€РѕРІРєРѕРІР° РїРѕРІРµСЂС…РЅСЏ</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          180 в‚ґ<small style="display:inline">/РјВІ</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="12" rx="1"/>
+            <path d="M5 10l4-2M9 14l3-1.5M14 12l4-2"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>Р“Р»СЏРЅС†РµРІР° СЃС‚РµР»СЏ</h3>
+          <p>РЇСЃРєСЂР°РІРёР№ РІС–РґР±Р»РёСЃРє, РµС„РµРєС‚ РґР·РµСЂРєР°Р»Р°, РІС–Р·СѓР°Р»СЊРЅРѕ РІРёС‰Р° РєС–РјРЅР°С‚Р°</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          200 в‚ґ<small style="display:inline">/РјВІ</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="12" rx="1"/>
+            <path d="M3 12h18"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РЎР°С‚РёРЅРѕРІР° СЃС‚РµР»СЏ</h3>
+          <p>Р›РµРіРєРёР№ С€РѕРІРєРѕРІРёР№ Р±Р»РёСЃРє вЂ” РїСЂРµРјС–Р°Р»СЊРЅРёР№ РІРёРіР»СЏРґ РјС–Р¶ РјР°С‚РѕРј С– РіР»СЏРЅС†РµРј</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          220 в‚ґ<small style="display:inline">/РјВІ</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="8" r="2"/>
+            <circle cx="14" cy="6" r="2"/>
+            <circle cx="18" cy="12" r="2"/>
+            <circle cx="10" cy="14" r="2"/>
+            <circle cx="6" cy="18" r="2"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё</h3>
+          <p>РњРѕРЅС‚Р°Р¶ С‚РѕС‡РѕРє (LED Р°Р±Рѕ РіР°Р»РѕРіРµРЅ) Сѓ СЃС‚РµР»СЊРѕРІРµ РїРѕР»РѕС‚РЅРѕ</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          250 в‚ґ<small style="display:inline">/С€С‚</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h18"/>
+            <path d="M3 6h18M3 18h18" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—</h3>
+          <p>Р“РµРѕРјРµС‚СЂРёС‡РЅС– СЃРІС–С‚Р»РѕРІС– СЃРјСѓРіРё вЂ” СЂРѕРјР±, РїСЂСЏРјРѕРєСѓС‚РЅРёРє, РєРѕРЅС‚СѓСЂ</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          520 в‚ґ<small style="display:inline">/Рј</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="10" width="18" height="4" rx="1"/>
+            <circle cx="7" cy="12" r="1"/>
+            <circle cx="12" cy="12" r="1"/>
+            <circle cx="17" cy="12" r="1"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР°</h3>
+          <p>РўРѕРЅРєРёР№ С‚СЂРµРє Р· СЂСѓС…РѕРјРёРјРё Р»С–РЅС–Р№РЅРёРјРё С‚Р° С‚РѕС‡РєРѕРІРёРјРё СЃРІС–С‚РёР»СЊРЅРёРєР°РјРё</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          450 в‚ґ<small style="display:inline">/Рј</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="12" rx="1"/>
+            <path d="M3 11l4 4 5-6 4 3 5-4"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>Р¤РѕС‚РѕРґСЂСѓРє РЅР° РїРѕР»РѕС‚РЅС–</h3>
+          <p>UV-РґСЂСѓРє Р·РѕР±СЂР°Р¶РµРЅРЅСЏ (С„РѕС‚Рѕ, С–Р»СЋСЃС‚СЂР°С†С–СЏ, РѕСЂРЅР°РјРµРЅС‚)</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          350 в‚ґ<small style="display:inline">/РјВІ</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18l-2 14H5L3 6z"/>
+            <path d="M3 6V3h18v3"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>Р‘Р°РіР°С‚РѕСЂС–РІРЅРµРІР° РєРѕРЅСЃС‚СЂСѓРєС†С–СЏ</h3>
+          <p>2вЂ“3 СЂС–РІРЅС–, РјРµС‚Р°Р»РµРІРёР№ РїСЂРѕС„С–Р»СЊ, РєРѕРјР±С–РЅР°С†С–СЏ РјР°С‚РµСЂС–Р°Р»С–РІ</p>
+        </div>
+        <div class="price-value">
+          <small>РІС–Рґ</small>
+          280 в‚ґ<small style="display:inline">/РјВІ</small>
+        </div>
+      </div>
+
+      <div class="price-row reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="price-info">
+          <h3>РўР° С–РЅС€Рµ</h3>
+          <p>Р”Р·РµСЂРєР°Р»СЊРЅС–, С‚РєР°РЅРёРЅРЅС– Barrisol, РЅРµСЃС‚Р°РЅРґР°СЂС‚РЅС– С„РѕСЂРјРё, Р°СЂРєРё, РєРѕР»Р°</p>
+        </div>
+        <div class="price-value" style="font-size:15px">
+          <small>СЂРѕР·СЂР°С…СѓРЅРѕРє</small>
+          Р†РќР”РР’Р†Р”РЈРђР›Р¬РќРћ
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROCESS ============== -->
+<section class="section" id="process">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-num">04 / РЇРљ РњР РџР РђР¦Р®Р„РњРћ</div>
+      <h2 class="section-title">Р’С–Рґ Р·Р°СЏРІРєРё РґРѕ <span class="accent">РіРѕС‚РѕРІРѕС— СЃС‚РµР»С–</span></h2>
+    </div>
+    <p class="section-desc">4 РєСЂРѕРєРё. 5вЂ“7 РґРЅС–РІ РІС–Рґ РїРµСЂС€РѕРіРѕ РґР·РІС–РЅРєР° РґРѕ РіРѕС‚РѕРІРѕС— СЃС‚РµР»С–. Р‘РµР· СЃСЋСЂРїСЂРёР·С–РІ С– РїСЂРёС…РѕРІР°РЅРёС… РІРёС‚СЂР°С‚.</p>
+  </div>
+
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="process-num">01</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      <h3>Р—Р°СЏРІРєР° С‚Р° Р·Р°РјС–СЂ</h3>
+      <p>РўРµР»РµС„РѕРЅСѓС”С‚Рµ Р°Р±Рѕ РїРёС€РµС‚Рµ РІ РјРµСЃРµРЅРґР¶РµСЂ. Р’РёС—Р¶РґР¶Р°С”РјРѕ РЅР° Р·Р°РјС–СЂ Р±РµР·РєРѕС€С‚РѕРІРЅРѕ Сѓ Р·СЂСѓС‡РЅРёР№ РґР»СЏ РІР°СЃ С‡Р°СЃ.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">02</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Р РѕР·СЂР°С…СѓРЅРѕРє С‚Р° РґРѕРіРѕРІС–СЂ</h3>
+      <p>Р“РѕС‚СѓС”РјРѕ РєРѕС€С‚РѕСЂРёСЃ РїСЂРѕС‚СЏРіРѕРј 1 РіРѕРґРёРЅРё. РџС–РґРїРёСЃСѓС”РјРѕ РґРѕРіРѕРІС–СЂ Р· С„С–РєСЃРѕРІР°РЅРѕСЋ С†С–РЅРѕСЋ вЂ” Р±РµР· СЃСЋСЂРїСЂРёР·С–РІ.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">03</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="6" width="18" height="12" rx="1"/>
+          <path d="M3 10h18"/>
+          <path d="M9 14h6"/>
+        </svg>
+      </div>
+      <h3>Р’РёРіРѕС‚РѕРІР»РµРЅРЅСЏ</h3>
+      <p>Р’РёРіРѕС‚РѕРІР»СЏС”РјРѕ РїРѕР»РѕС‚РЅРѕ РїС–Рґ РІР°С€С– С‚РѕС‡РЅС– СЂРѕР·РјС–СЂРё РЅР° Р·Р°РІРѕРґС–. РўРµСЂРјС–РЅ РІРёРіРѕС‚РѕРІР»РµРЅРЅСЏ 3вЂ“5 РґРЅС–РІ.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">04</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+      <h3>РњРѕРЅС‚Р°Р¶ Р·Р° 1 РґРµРЅСЊ</h3>
+      <p>РџСЂРёС—Р¶РґР¶Р°С”РјРѕ РІСЂР°РЅС†С– вЂ” РІРІРµС‡РµСЂС– РјР°С”С‚Рµ РіРѕС‚РѕРІСѓ СЃС‚РµР»СЋ Р· РїСЂРёР±СЂР°РЅРёРј СЂРѕР±РѕС‡РёРј РјС–СЃС†РµРј.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ADVANTAGES ============== -->
+<section class="section" id="advantages" style="padding-top:0">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-num">05 / РџР•Р Р•Р’РђР“Р</div>
+      <h2 class="section-title">Р§РѕРјСѓ <span class="accent">РѕР±РёСЂР°СЋС‚СЊ РЅР°СЃ</span></h2>
+    </div>
+    <p class="section-desc">10+ СЂРѕРєС–РІ РґРѕСЃРІС–РґСѓ, 500+ РІРёРєРѕРЅР°РЅРёС… РїСЂРѕРµРєС‚С–РІ. РџСЂР°С†СЋС”РјРѕ СЏРє РґР»СЏ РїСЂРёРІР°С‚РЅРёС… РєР»С–С”РЅС‚С–РІ, С‚Р°Рє С– РґР»СЏ Р·Р°Р±СѓРґРѕРІРЅРёРєС–РІ.</p>
+  </div>
+
+  <div class="features reveal">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12l2 2 4-4"/>
+          <path d="M21 12c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h3>Р“Р°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ</h3>
+      <p>РџРёСЃСЊРјРѕРІР° РіР°СЂР°РЅС‚С–СЏ РЅР° РјР°С‚РµСЂС–Р°Р» С– СЂРѕР±РѕС‚Сѓ. Р‘РµР·РєРѕС€С‚РѕРІРЅРµ СѓСЃСѓРЅРµРЅРЅСЏ Р±СѓРґСЊ-СЏРєРёС… РґРµС„РµРєС‚С–РІ.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3>РњРѕРЅС‚Р°Р¶ Р·Р° 1 РґРµРЅСЊ</h3>
+      <p>Р’РµСЃСЊ С†РёРєР» вЂ” Р·Р°РјС–СЂ, РІРёРіРѕС‚РѕРІР»РµРЅРЅСЏ, РјРѕРЅС‚Р°Р¶ вЂ” Р·Р°Р№РјР°С” 5вЂ“7 РґРЅС–РІ Р· РґРЅСЏ Р·РІРµСЂРЅРµРЅРЅСЏ.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+        </svg>
+      </div>
+      <h3>Р’Р»Р°СЃРЅРµ РѕР±Р»Р°РґРЅР°РЅРЅСЏ</h3>
+      <p>Р’Р»Р°СЃРЅРёР№ С–РЅСЃС‚СЂСѓРјРµРЅС‚, С‚РµСЂРјРѕС€РїР°С‚РµР»С–. Р‘РµР· РїРѕСЃРµСЂРµРґРЅРёРєС–РІ вЂ” РІС–Рґ РІРёСЂРѕР±РЅРёРєР° РґРѕ РІР°С€РѕС— СЃС‚РµР»С–.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <path d="M2 10h20"/>
+        </svg>
+      </div>
+      <h3>Р“РѕС‚С–РІРєР° Р°Р±Рѕ РєР°СЂС‚РєР°</h3>
+      <p>РћРїР»Р°С‚Р° Р±СѓРґСЊ-СЏРєРёРј Р·СЂСѓС‡РЅРёРј СЃРїРѕСЃРѕР±РѕРј. Р Р°С…СѓРЅРѕРє Р¤РћРџ вЂ” РјРѕР¶РЅР° РІРєР»СЋС‡РёС‚Рё Сѓ РІРёС‚СЂР°С‚Рё.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA BAND ============== -->
+<section class="cta-band">
+  <div class="cta-band-inner reveal">
+    <h2>Р—РђРњРћР’РўР• Р‘Р•Р—РљРћРЁРўРћР’РќРР™<br>Р—РђРњР†Р  РџР РЇРњРћ Р—РђР РђР—</h2>
+    <p>Р’РёС—Р·Рґ РїРѕ РџРѕР»С‚Р°РІС– С‚Р° РѕР±Р»Р°СЃС‚С– вЂ” Р±РµР·РєРѕС€С‚РѕРІРЅРѕ. Р‘РµР· Р·РѕР±РѕРІ'СЏР·Р°РЅСЊ. РџСЂРѕСЃС‚Рѕ Р·Р°РїСЂРѕРїРѕРЅСѓС”РјРѕ РЅР°Р№РєСЂР°С‰Рµ СЂС–С€РµРЅРЅСЏ РґР»СЏ РІР°С€РѕС— РєС–РјРЅР°С‚Рё.</p>
+    <a href="tel:+380961763211" class="cta-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+      </svg>
+      +380 096 176 32 11
+    </a>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section class="section" id="contact">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-num">06 / РљРћРќРўРђРљРўР</div>
+      <h2 class="section-title">Р—РІ'СЏР¶С–С‚СЊСЃСЏ <span class="accent">Р· РЅР°РјРё</span></h2>
+    </div>
+    <p class="section-desc">Р—Р°РїРѕРІРЅС–С‚СЊ С„РѕСЂРјСѓ вЂ” РїРµСЂРµРґР·РІРѕРЅРёРјРѕ РїСЂРѕС‚СЏРіРѕРј 5 С…РІРёР»РёРЅ С– Р·Р°РїРёС€РµРјРѕ РЅР° Р±РµР·РєРѕС€С‚РѕРІРЅРёР№ Р·Р°РјС–СЂ.</p>
+  </div>
+
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        <div style="flex:1">
+          <div class="contact-info-label">РўРµР»РµС„РѕРЅ С‚Р° РјРµСЃРµРЅРґР¶РµСЂРё</div>
+          <a href="tel:+380961763211" class="contact-info-val">+380 096 176 32 11</a>
+          <div class="messenger-buttons">
+            <a href="viber://chat?number=%2B380961763211" class="msg-btn msg-btn-viber">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6.6 4.8c-.7 0-1.4.3-1.9 1L3.3 7.4c-.6.7-.9 1.6-.7 2.5.4 1.7 1.4 4.4 4.1 7.1 2.7 2.7 5.4 3.7 7.1 4.1.9.2 1.8-.1 2.5-.7l1.6-1.4c1-.9 1-2.4 0-3.3l-1.7-1.5c-.7-.7-1.8-.8-2.7-.3l-.6.3c-.4.2-.9.1-1.2-.2l-2.7-2.7c-.3-.3-.4-.8-.2-1.2l.3-.6c.5-.9.4-2-.3-2.7L7.4 5.1c-.2-.2-.5-.3-.8-.3z" fill="currentColor"/>
+                <path d="M14 6.5a4 4 0 014 4M14 3.5a7 7 0 017 7M14 9.5a1 1 0 011 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+              <span>Viber</span>
+            </a>
+            <a href="https://wa.me/380961763211" target="_blank" rel="noopener" class="msg-btn msg-btn-whatsapp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://t.me/+380961763211" target="_blank" rel="noopener" class="msg-btn msg-btn-telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.473-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              <span>Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s-8-4.5-8-12a8 8 0 1116 0c0 7.5-8 12-8 12z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Р—РѕРЅР° СЂРѕР±РѕС‚Рё</div>
+          <div class="contact-info-val" style="font-size:17px">РџРѕР»С‚Р°РІР° С‚Р° РџРѕР»С‚Р°РІСЃСЊРєР° РѕР±Р»Р°СЃС‚СЊ</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Р РµР¶РёРј СЂРѕР±РѕС‚Рё</div>
+          <div class="contact-info-val" style="font-size:17px">РџРЅвЂ“РќРґ: 8:00 вЂ“ 20:00</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Р—Р°РјС–СЂ</div>
+          <div class="contact-info-val" style="font-size:17px">Р‘РµР·РєРѕС€С‚РѕРІРЅРѕ вЂ” Р±РµР· Р·РѕР±РѕРІ'СЏР·Р°РЅСЊ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h3>Р—Р°Р»РёС€РёС‚Рё Р·Р°СЏРІРєСѓ</h3>
+      <p>РџРµСЂРµРґР·РІРѕРЅРёРјРѕ Р·Р° 5 С…РІРёР»РёРЅ С– Р·Р°РїРёС€РµРјРѕ РЅР° Р±РµР·РєРѕС€С‚РѕРІРЅРёР№ Р·Р°РјС–СЂ.</p>
+      <form
+        id="lead-form"
+        method="POST"
+        action="https://formsubmit.co/igorsavich152@gmail.com"
+      >
+        <input type="hidden" name="_subject" value="РќРѕРІР° Р·Р°СЏРІРєР° Р· СЃР°Р№С‚Сѓ РџРѕС‚РѕР»РєРёВ·РџРѕР»С‚Р°РІР°" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="form-field">
+          <label>Р’Р°С€Рµ С–Рј'СЏ</label>
+          <input type="text" name="Р†РјКјСЏ" placeholder="РЇРє РґРѕ РІР°СЃ Р·РІРµСЂС‚Р°С‚РёСЃСЏ" required>
+        </div>
+        <div class="form-field">
+          <label>РўРµР»РµС„РѕРЅ</label>
+          <input type="tel" name="РўРµР»РµС„РѕРЅ" placeholder="+380 __ ___ __ __" required>
+        </div>
+        <div class="form-field">
+          <label>РџРѕСЃР»СѓРіР°</label>
+          <select name="РџРѕСЃР»СѓРіР°">
+            <option>РњР°С‚РѕРІР° СЃС‚РµР»СЏ</option>
+            <option>Р“Р»СЏРЅС†РµРІР° СЃС‚РµР»СЏ</option>
+            <option>РЎР°С‚РёРЅРѕРІР° СЃС‚РµР»СЏ</option>
+            <option>РЎС‚РµР»СЏ Р· РїС–РґСЃРІС–С‚РєРѕСЋ (СЂРѕРјР±, РєРѕРЅС‚СѓСЂ)</option>
+            <option>РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—</option>
+            <option>РњР°РіРЅС–С‚РЅР° С‚СЂРµРєРѕРІР°</option>
+            <option>РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё</option>
+            <option>Р‘Р°РіР°С‚РѕСЂС–РІРЅРµРІР° РєРѕРЅСЃС‚СЂСѓРєС†С–СЏ</option>
+            <option>Р¤РѕС‚РѕРґСЂСѓРє</option>
+            <option>РќРµ РІРёР·РЅР°С‡РёРІСЃСЏ вЂ” РїРѕС‚СЂС–Р±РЅР° РєРѕРЅСЃСѓР»СЊС‚Р°С†С–СЏ</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>РџР»РѕС‰Р° РєС–РјРЅР°С‚Рё, РјВІ (РїСЂРёР±Р»РёР·РЅРѕ)</label>
+          <input type="text" name="РџР»РѕС‰Р°" placeholder="РќР°РїСЂРёРєР»Р°Рґ: 18 РјВІ Р°Р±Рѕ РЅРµ Р·РЅР°СЋ">
+        </div>
+        <div class="form-field">
+          <label>РљРѕРјРµРЅС‚Р°СЂ</label>
+          <textarea name="РљРѕРјРµРЅС‚Р°СЂ" placeholder="РђРґСЂРµСЃР°, РїРѕР±Р°Р¶Р°РЅРЅСЏ, Р±Р°Р¶Р°РЅРёР№ С‚РµСЂРјС–РЅ..."></textarea>
+        </div>
+        <button type="submit">
+          Р’С–РґРїСЂР°РІРёС‚Рё Р·Р°СЏРІРєСѓ
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#" class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="6" width="18" height="12" rx="1"/>
+              <path d="M3 10h18M3 14h18"/>
+            </svg>
+          </div>
+          <span>РџРћРўРћР›РљР<b>В·</b>РџРћР›РўРђР’Рђ</span>
+        </a>
+        <p>РџСЂРµРјС–Р°Р»СЊРЅС– РЅР°С‚СЏР¶РЅС– СЃС‚РµР»С– РІ РџРѕР»С‚Р°РІС–. РњРѕРЅС‚Р°Р¶ Р·Р° 1 РґРµРЅСЊ, РіР°СЂР°РЅС‚С–СЏ 12 СЂРѕРєС–РІ, Р±РµР·РєРѕС€С‚РѕРІРЅРёР№ Р·Р°РјС–СЂ. 500+ РІРёРєРѕРЅР°РЅРёС… РїСЂРѕРµРєС‚С–РІ Р· 2014 СЂРѕРєСѓ.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>РџРѕСЃР»СѓРіРё</h4>
+        <a href="#services">РњР°С‚РѕРІС– СЃС‚РµР»С–</a>
+        <a href="#services">Р“Р»СЏРЅС†РµРІС– СЃС‚РµР»С–</a>
+        <a href="#services">РЎРІС–С‚Р»РѕРІС– Р»С–РЅС–С—</a>
+        <a href="#services">РўСЂРµРєРѕРІС– СЃРёСЃС‚РµРјРё</a>
+        <a href="#services">РўРѕС‡РєРѕРІС– СЃРІС–С‚РёР»СЊРЅРёРєРё</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>РљРѕРјРїР°РЅС–СЏ</h4>
+        <a href="#gallery">Р РѕР±РѕС‚Рё</a>
+        <a href="#prices">Р¦С–РЅРё</a>
+        <a href="#process">РџСЂРѕС†РµСЃ</a>
+        <a href="#advantages">РџРµСЂРµРІР°РіРё</a>
+        <a href="#contact">РљРѕРЅС‚Р°РєС‚Рё</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>РљРѕРЅС‚Р°РєС‚Рё</h4>
+        <a href="tel:+380961763211">+380 096 176 32 11</a>
+        <a href="viber://chat?number=%2B380961763211">Viber</a>
+        <a href="https://wa.me/380961763211" target="_blank">WhatsApp</a>
+        <a href="https://t.me/+380961763211" target="_blank">Telegram</a>
+        <p>РџРЅвЂ“РќРґ: 8:00 вЂ“ 20:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>В© 2026 РџРћРўРћР›РљРВ·РџРћР›РўРђР’Рђ вЂ” РЈРЎР† РџР РђР’Рђ Р—РђРҐРР©Р•РќР†</div>
+      <div>// РџРћР›РўРђР’Рђ РўРђ РџРћР›РўРђР’РЎР¬РљРђ РћР‘Р›РђРЎРўР¬</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== FLOATING ============== -->
+<div class="float-contacts">
+  <a href="https://t.me/+380961763211" target="_blank" rel="noopener" class="float-btn float-btn-telegram" aria-label="Telegram">
+    <span class="float-btn-tooltip">РќР°РїРёСЃР°С‚Рё Сѓ Telegram</span>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.473-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+  <a href="viber://chat?number=%2B380961763211" class="float-btn float-btn-viber" aria-label="Viber">
+    <span class="float-btn-tooltip">РќР°РїРёСЃР°С‚Рё Сѓ Viber</span>
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M6.6 4.8c-.7 0-1.4.3-1.9 1L3.3 7.4c-.6.7-.9 1.6-.7 2.5.4 1.7 1.4 4.4 4.1 7.1 2.7 2.7 5.4 3.7 7.1 4.1.9.2 1.8-.1 2.5-.7l1.6-1.4c1-.9 1-2.4 0-3.3l-1.7-1.5c-.7-.7-1.8-.8-2.7-.3l-.6.3c-.4.2-.9.1-1.2-.2l-2.7-2.7c-.3-.3-.4-.8-.2-1.2l.3-.6c.5-.9.4-2-.3-2.7L7.4 5.1c-.2-.2-.5-.3-.8-.3z" fill="currentColor"/>
+      <path d="M14 6.5a4 4 0 014 4M14 3.5a7 7 0 017 7M14 9.5a1 1 0 011 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+  <a href="https://wa.me/380961763211" target="_blank" rel="noopener" class="float-btn float-btn-whatsapp" aria-label="WhatsApp">
+    <span class="float-btn-tooltip">РќР°РїРёСЃР°С‚Рё Сѓ WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <a href="tel:+380961763211" class="float-btn float-btn-call" aria-label="Р—Р°С‚РµР»РµС„РѕРЅСѓРІР°С‚Рё">
+    <span class="float-btn-tooltip">Р—Р°С‚РµР»РµС„РѕРЅСѓРІР°С‚Рё</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
